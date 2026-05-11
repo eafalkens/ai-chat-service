@@ -1,19 +1,25 @@
-# AI Chat Service
+# AI Chat Service Detta projekt är en Spring Boot-applikation som fungerar som en middleware mellan en användare och en AI-tjänst. Applikationen använder ett REST API där användaren kan skicka ett meddelande tillsammans med en vald personality, exempelvis coder eller pirate. Projektet innehåller även enkel minneshantering med sessionId samt använder Spring RestClient för externa anrop. ## Starta projektet lokalt Klona projektet:
+```
+git clone https://github.com/eafalkens/ai-chat-service.git
+cd ai-chat-service
+```
 
-## 📌 Beskrivning
-Detta är en Spring Boot-applikation som fungerar som middleware mellan en klient och en Large Language Model (LLM).  
-Applikationen tar emot ett meddelande, väljer en personlighet (system prompt) och skickar vidare requesten till en extern AI-modell.
+## Starta applikationen
+```
+mvn spring-boot:run
+```
 
----
+## Applikationen körs på:
+http://localhost:8080
 
-## 🚀 Endpoint
+## Skicka en POST-request till:
+http://localhost:8080/api/v1/chat
 
-### POST `/api/v1/chat`
-
-### Request body:
-```json
+## Exempel på request body:
+```
 {
-  "personality": "coder",
-  "message": "Hur skriver jag en for-loop i Java?",
-  "sessionId": "user-123"
+"personality": "coder",
+"message": "Hur skriver jag en loop i Java?",
+"sessionId": "1"
 }
+```
